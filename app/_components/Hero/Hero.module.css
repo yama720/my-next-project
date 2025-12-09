@@ -1,0 +1,55 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0 0 0 0.5);
+  color: #fff;
+  overflow: hidden; /* はみ出たものを隠す */
+  padding: 100px 0;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-block-end: 1rem;
+}
+
+.sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-block-end: 40px;
+}
+
+.sub::before {
+  content: ''; /* 空にすると、文字以外のものも入れれる */
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: var(--color-text-unpainted);
+}
+
+.sub::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: var(--color-text-unpainted);
+}
+
+.bgimg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  object-position: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
