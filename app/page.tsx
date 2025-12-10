@@ -47,11 +47,10 @@ export default function Home() {
         <div>
           <h1 className={styles.title}>テクノロジーの力で世界を変える</h1>
           <p className={styles.description}>
-            私たちは市場をリードしているグローバルテックカンパニーです。
+            私達は市場をリードしているグローバルテックカンパニーです。
           </p>
         </div>
 
-        {/* <img className={styles.bgimg} src="/img-mv.jpg" alt="背景" /> */}
         <Image
           className={styles.bgimg}
           src="/img-mv.jpg"
@@ -66,7 +65,7 @@ export default function Home() {
         <NewsList news={sliceData} />
 
         <div className={styles.newsLink}>
-          <ButtonLink href="/news">もっと見る</ButtonLink>
+          <ButtonLink href="/news">もっとみる</ButtonLink>
         </div>
       </section>
     </>
