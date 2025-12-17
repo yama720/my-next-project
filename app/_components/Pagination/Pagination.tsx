@@ -30,7 +30,7 @@ export default function Pagination({
           <li className={styles.list} key={p}>
             {/* currentの値が配列のpの番号と一致していなかった時 */}
             {current !== p ? (
-              <Link href={`/${basePath}/p/${p}`} className={styles.item}>
+              <Link href={`${basePath}/p/${p}`} className={styles.item}>
                 {p}
               </Link>
             ) : (
