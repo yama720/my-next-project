@@ -75,6 +75,7 @@ export default function ContactForm() {
         </label>
         <textarea className={styles.textarea} id="message" name="message" />
       </div>
+
       <div className={styles.actions}>
         {state.status === 'error' && (
           <p className={styles.error}>{state.message}</p>

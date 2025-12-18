@@ -24,37 +24,37 @@ export async function createContactData(_prevState: any, formData: FormData) {
   if (!rawFormData.firstname) {
     return {
       status: 'error',
-      massage: '名を入力してください',
+      message: '名を入力してください',
     };
   }
 
   if (!rawFormData.company) {
     return {
       status: 'error',
-      massage: '会社名を入力してください',
+      message: '会社名を入力してください',
     };
   }
 
   if (!rawFormData.email) {
     return {
       status: 'error',
-      massage: 'メールアドレスを入力してください',
+      message: 'メールアドレスを入力してください',
     };
   }
 
   if (!validateEmail(rawFormData.email)) {
     return {
       status: 'error',
-      massage: 'メールアドレスの形式が誤っています',
+      message: 'メールアドレスの形式が誤っています',
     };
   }
 
   if (!rawFormData.message) {
     return {
       status: 'error',
-      massage: 'メッセージを入力してください',
+      message: 'メッセージを入力してください',
     };
   }
 
-  return { status: 'success', massage: 'OK' };
+  return { status: 'success', message: 'OK' };
 }
