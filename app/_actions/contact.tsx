@@ -17,7 +17,7 @@ export async function createContactData(_prevState: any, formData: FormData) {
   if (!rawFormData.lastname) {
     return {
       status: 'error',
-      massage: '姓を入力してください',
+      message: '姓を入力してください',
     };
   }
 

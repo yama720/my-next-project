@@ -1,6 +1,7 @@
-import Footer from "./_components/Footer/Footer";
-import Header from "./_components/Header/Header";
-import "./globals.css";
+import Footer from './_components/Footer/Footer';
+import Header from './_components/Header/Header';
+import ScrollToTopOnNavigate from './_components/ScrollToTopOnNavigate';
+import './globals.css';
 
 export default function RootLayout({
   children,
@@ -8,12 +9,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   <html lang="ja">
-    <body>
-      <Header />
-      {children}
-      <Footer />
-    </body>
-   </html>
+    <html lang="ja">
+      <body>
+        <ScrollToTopOnNavigate />
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html>
   );
 }

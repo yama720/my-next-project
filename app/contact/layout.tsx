@@ -5,7 +5,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 export default function RootLayout({ children }: Props) {
   return (
