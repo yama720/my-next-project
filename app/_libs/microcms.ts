@@ -5,14 +5,6 @@ import type {
   MicroCMSImage,
   MicroCMSListContent,
 } from 'microcms-js-sdk';
-import { queries } from 'storybook/test';
-
-export type Member = {
-  name: string;
-  position: string;
-  profile: string;
-  image: MicroCMSImage;
-} & MicroCMSListContent;
 
 export type Category = {
   name: string;
@@ -24,6 +16,7 @@ export type News = {
   content: string;
   thumbnail?: MicroCMSImage;
   category: Category;
+  date: string;
 } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -38,14 +31,6 @@ const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
   apiKey: process.env.MICROCMS_API_KEY,
 });
-
-export const getMembersList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Member>({
-    endpoint: 'members',
-    queries,
-  });
-  return listData;
-};
 
 export const getNewsList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<News>({

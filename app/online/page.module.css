@@ -1,0 +1,228 @@
+.main {
+  width: 100%;
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 220px 1fr; /* サイドバー幅を固定 */
+  gap: 50px;
+  padding: 0 20px;
+}
+
+/* サイドバー */
+.sidebar {
+  border-right: 1px solid #eee;
+}
+
+/* 各グループのタイトル（クリック不可） */
+.groupTitle {
+  background-color: #968acb; /* 矢印と同じ紫 */
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 15px;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.categoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: sticky; /* スクロールしてもメニューを追従させる */
+  top: 20px;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.categoryItem {
+  border-bottom: 1px solid #eee;
+}
+
+.categoryItem a {
+  display: block;
+  padding: 15px 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+
+.categoryItem a:hover {
+  background-color: #f9f9f9;
+  color: #968acb;
+  padding-left: 15px; /* 少し右にずれるアニメーション */
+}
+
+/* 右側：メインコンテンツ */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* スライダーエリアの制限 */
+.heroSlider {
+  width: 100%; /* 親の grid に合わせる */
+  max-width: 800px; /* 必要であれば最大幅を制限 */
+
+  position: relative;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  z-index: 1;
+  margin-bottom: 40px;
+}
+
+/* 擬似要素を使ってレスポンシブな高さを確保する（暗転対策） */
+.heroSlider::before {
+  content: '';
+  display: block;
+  padding-top: 66.66%; /* 3:2 の比率 (2 / 3 * 100) */
+}
+
+/* Sliderコンポーネントがこの中に絶対配置(fill)で入るようにする */
+.heroSlider > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: normal;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+}
+
+/* 商品グリッド */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.productCard {
+  text-align: left;
+}
+
+.imageBox {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #f2f2f2;
+  margin-bottom: 15px;
+}
+
+.productName {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ボタン中央寄せ */
+.buttonCenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.moreButton {
+  display: inline-block;
+  padding: 12px 60px;
+  background-color: #b1a4cf;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  transition: opacity 0.3s;
+}
+
+.moreButton:hover {
+  opacity: 0.8;
+}
+
+/* 人気シリーズ */
+.seriesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.seriesImageBox {
+  width: 100%;
+  height: 250px;
+  background-color: #f2f2f2;
+  margin-bottom: 15px;
+}
+
+.seriesText {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 画像とテキストをまとめたリンク */
+.productLink,
+.seriesCard {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: opacity 0.3s;
+}
+
+.productLink:hover,
+.seriesCard:hover {
+  opacity: 0.7;
+}
+
+.imageBox,
+.seriesImageBox {
+  width: 100%;
+  position: relative; /* Image fill を使うために必須 */
+  overflow: hidden;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+}
+
+.imageBox {
+  aspect-ratio: 1 / 1; /* 正方形 */
+}
+
+.seriesImageBox {
+  height: 250px; /* シリーズ画像は横長に設定 */
+}
+
+.seriesTitle {
+  font-size: 15px;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.seriesText {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* スマホ対応 */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr; /* 縦並び */
+    gap: 40px;
+  }
+  .sidebar {
+    display: none; /* スマホではサイドバーを非表示（または別の形式） */
+  }
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr); /* スマホは2列 */
+  }
+  .heroSlider {
+    max-width: 100%; /* スマホでは画面端まで使う */
+  }
+}

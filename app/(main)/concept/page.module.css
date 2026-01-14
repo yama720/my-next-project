@@ -1,0 +1,130 @@
+.main {
+  color: #666666;
+}
+
+/* 文章 */
+.intro {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.introTitle {
+  font-size: 35px;
+}
+
+.introP {
+  font-size: 30px;
+}
+
+.introText {
+  font-size: 17px;
+  text-align: center;
+  margin: 50px;
+}
+
+/* ----------------------------------- */
+/* 特徴紹介のセクションを囲うクラス */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 特徴紹介の1ブロック */
+.featureItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 240px;
+  text-align: center;
+  background-color: #e6f2ff; /* デザインにある水色 */
+  overflow: hidden;
+  min-width: 0; /* Flexアイテムがコンテンツ幅に固執するのを防ぐ */
+}
+
+/* 偶数番目のアイテムは画像とテキストを左右反転させる */
+.featureItem:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* 画像 */
+.imageWrapper {
+  flex: 1;
+  height: 100%;
+  min-width: 0;
+}
+
+.imageWrapper img {
+  width: 100% !important; /* 親の幅いっぱいに広がる */
+  height: 100% !important; /* 親の高さに合わせる */
+  object-fit: cover;
+}
+
+.featureContent {
+  flex: 1;
+  padding: 40px;
+}
+
+.featureContent h3 {
+  border-bottom: 2px solid #f2323f; /* 見出しの下線 */
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* ----------------------------------------- */
+/* リンク */
+
+.linkContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 100px;
+}
+
+.shopLink {
+  /* レイアウト設定 */
+  display: flex; /* 中の文字を中央に寄せる */
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 800px;
+  height: 100px;
+  border: 1px solid #666666;
+
+  /* テキスト装飾 */
+  color: #333;
+  text-decoration: none; /* リンクの下線を消す */
+  font-size: 18px;
+  letter-spacing: 0.1em; /* 文字間隔を広げる */
+
+  /* インタラクション */
+  transition: all 0.3s ease; /* ホバー時の動きを滑らかに */
+}
+
+/* ホバー（マウスを乗せた時）の演出 */
+.shopLink:hover {
+  background-color: #968acb;
+  color: #fff;
+}
+
+/* ------------------------------------ */
+
+@media (max-width: 768px) {
+  .featureItem {
+    flex-direction: column; /* 縦並びに変更 */
+    height: auto; /* 高さを自動にして中身に合わせる */
+  }
+
+  .featureItem:nth-child(even) {
+    flex-direction: column; /* 偶数番目も縦並びにする */
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: 200px; /* スマホ時の画像の高さ */
+  }
+}

@@ -1,24 +1,40 @@
-.header{
-    position: absolute;
-    padding: 16px 24px 8px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+.headerwrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logoLink{
-    display: flex;
+.titleWrap {
+  text-align: center;
+  width: 100%;
 }
 
-.logo{
-    height: 24px;
-    width: auto;
+.title {
+  font-size: 96px;
+  color: #968acb;
+  font-family: var(--font-playfair), serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: italic;
+  margin: 0;
+
+  /* 文字間を詰めたい */
+  letter-spacing: -0.02em;
 }
 
-@media (max-width:640px){
-    .header{
-        padding: 24px 16px 8px;
-    }
+.logoLink {
+  text-decoration: none; /* 下線を消す */
+  color: inherit; /* .title で指定した色をそのまま使う */
+  transition: opacity 0.3s ease;
+}
+
+.logoLink:hover {
+  opacity: 0.6; /* ホバーした時に「押せる」感を出す */
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 24px 16px 8px;
+  }
 }

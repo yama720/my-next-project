@@ -1,0 +1,114 @@
+.outerContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  /* 横にラインを並べるための設定を追加 */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 横に並べるための追加クラス */
+.headerFlex {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* 文字と線の間隔 */
+}
+
+.heading {
+  font-family: var(--font-apple), serif;
+  font-size: 48px;
+  font-style: italic;
+  color: #f2323f;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #b1a4cf;
+}
+
+.scrollWindow {
+  display: flex;
+  width: 100%;
+}
+
+/* PC: 画像7枚が並ぶ幅を確保 */
+.flexContainer {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: calc(450px * 7) !important;
+  height: auto; /* 高さは中身に合わせる */
+  padding: 20px 0;
+}
+
+.slide {
+  /* 画像350px + 左右余白50pxずつ = 450px */
+  width: 450px !important;
+  flex-basis: 450px !important;
+  flex-shrink: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardLink {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.cardLink:hover {
+  opacity: 0.6;
+}
+
+/* 画像を囲む枠 */
+.imageWrapper {
+  /* ここが absolute になっている画像たちの基準点（檻）になります */
+  position: relative !important;
+  width: 350px;
+  height: 350px;
+}
+
+.image {
+  object-fit: contain; /* 画像を枠内に収める */
+}
+
+.bottomLine {
+  width: 90%;
+  height: 1px;
+  background-color: #b1a4cf;
+  margin: 10px auto 30px;
+}
+
+/* --- メディアクエリ（スマホ対応） --- */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 32px;
+  }
+
+  .flexContainer {
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .slide {
+    width: 100% !important;
+    flex-basis: auto !important;
+    padding: 20px 0;
+  }
+
+  .imageWrapper {
+    width: 80vw; /* 画面幅に合わせる */
+    height: 80vw;
+  }
+}

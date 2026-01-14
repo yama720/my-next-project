@@ -1,0 +1,100 @@
+/* ニュースセクション全体 */
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* 子要素（記事リスト）を横いっぱいに広げる */
+  padding: 60px 20px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ニュースリスト本体（Information）を幅いっぱいに */
+.news > :nth-child(2) {
+  width: 100%;
+}
+
+.heading {
+  font-family: var(--font-apple), serif;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 40px;
+  font-style: italic;
+  color: #f2323f;
+  text-align: left;
+}
+
+.newsWrap {
+  margin-top: -20px; /* 上の隙間を詰める */
+  margin-bottom: 10px; /* 下の「もっとみる」との隙間を調整 */
+}
+
+/* もしInformationの内側にpaddingがあるのを無視したい場合 */
+.newsWrap > * {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.newsLink {
+  display: flex;
+  justify-content: flex-end; /* リンクだけを右端に配置 */
+
+  /* 記事リスト（Information）と同じ最大幅に設定する */
+  width: 100%;
+  max-width: 900px; /* .news の max-width と合わせる */
+  margin: 0 auto; /* 記事リストと位置を揃える */
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+.newsLink a {
+  background: none;
+  padding: 0;
+  color: #333;
+  text-decoration: underline; /* リンクと分かりやすくするために下線 */
+  font-weight: bold;
+}
+
+.newsLink a:hover {
+  color: #666; /* ホバー時の色 */
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .news {
+    width: calc(100% - 160px);
+  }
+}
+
+@media (max-width: 640px) {
+  .top {
+    padding: 120px 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .description {
+    /* text-align: center; */
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .bgimg {
+    width: auto;
+  }
+
+  .news {
+    width: calc(100% - 32px);
+    padding: 16px 24px;
+  }
+
+  .newsLink {
+    display: flex;
+    justify-content: flex-end; /* スマホでも右寄せを維持 */
+    width: 100%;
+    margin-top: 16px;
+  }
+}

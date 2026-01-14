@@ -1,0 +1,81 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 上下の中心を合わせる */
+}
+
+/* ロゴのスタイル */
+.logoText {
+  font-family: serif;
+  font-size: 28px;
+  color: #968acb; /* オンラインストアのテーマカラー */
+  letter-spacing: 0.1em;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* PLOTTERIEの下に小文字を出す場合 */
+}
+
+.subLogo {
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 0.2em;
+  margin-top: -5px;
+}
+
+/* 右側：アイコンと検索 */
+.navSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 右寄せ */
+  gap: 15px;
+}
+
+.iconMenu {
+  display: flex;
+  gap: 20px;
+  color: #666;
+}
+
+.iconMenu a:hover {
+  color: #968acb;
+}
+
+/* 検索バーのスタイル */
+.searchBar {
+  position: relative;
+  width: 320px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 40px 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #968acb;
+}
+
+.searchButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+}

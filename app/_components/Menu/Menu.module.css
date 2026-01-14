@@ -1,45 +1,58 @@
-.items{
-    display: flex;
-    color: #fff;
-    gap:40px;
+.nav {
+  background-color: #f2f2f2; /* 薄いグレー */
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.button{
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 12px 0; /* バーの上下の太さ */
+  font-size: 14px;
+  color: #111111;
+  gap: 40px;
+}
+
+.button {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .nav {
     display: none;
-}
+  }
 
-@media (max-width:640px){
-    .nav{
-        display: none;
-    }
-
-    .nav.open{
+  .nav.open {
     display: block;
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     right: 0;
     bottom: 0;
     background-color: var(--color-bg-painted);
-    color:var(--color-text-unpainted);
+    color: var(--color-text-unpainted);
     padding: 24px 16px;
-}
+  }
 
-.items{
+  .items {
     flex-direction: column;
     gap: 24px;
-}
+  }
 
-    .button{
-        display: flex;
-        background:none;
-        border: none;
-        cursor:pointer;
-    }
+  .button {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-    .close{
-        position: absolute;
-        top:24px;
-        right: 16px;
-    }
+  .close {
+    position: absolute;
+    top: 24px;
+    right: 16px;
+  }
 }

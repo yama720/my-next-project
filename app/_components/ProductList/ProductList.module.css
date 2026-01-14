@@ -1,0 +1,29 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.heading {
+  font-family: var(--font-apple), serif;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 40px;
+  font-style: italic;
+  color: #f2323f;
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+  /* 1列あたりの幅を指定。minmaxを使うとレスポンシブが楽になります */
+  grid-template-columns: repeat(2, 1fr); /* スマホは2列 */
+  gap: 40px 24px; /* 縦の隙間 40px, 横の隙間 24px */
+}
+
+/* PC（タブレット以上）では4列にする */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

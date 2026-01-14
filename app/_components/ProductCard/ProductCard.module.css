@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 正方形を維持 */
+  overflow: hidden;
+  background-color: #f9f9f9;
+  margin-bottom: 12px;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05); /* ホバーで少し拡大 */
+}
+
+.info {
+  text-align: center;
+}
+
+.name {
+  font-family: var(--font-shippori), serif;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.price {
+  font-size: 12px;
+  color: #888;
+}
